@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 export class FetchserviceService {
 
   constructor(private http:HttpClient) { }
-  getGames(): Observable<Game[]>{
+  getGames(): Observable<any>{
     console.log("here")
     return this.http.get('https://stagingapi.gbarena.com/api/games');
   }

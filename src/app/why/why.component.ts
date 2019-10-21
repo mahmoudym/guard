@@ -1,18 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import {FetchserviceService} from '../fetchservice.service'
-
+import {Game} from '../games'
+import {ActivatedRoute, Router} from '@angular/router';
 @Component({
   selector: 'app-why',
   templateUrl: './why.component.html',
   styleUrls: ['./why.component.css']
 })
 export class WhyComponent implements OnInit {
-  public games = [];
-  constructor(private fetch:FetchserviceService) { }
+  public games:Game[] = [];
+  constructor(private _route: ActivatedRoute, private _router:Router) {
+    this.games = this._route.snapshot.data['games'].data
+  }
 
   ngOnInit() {
-    this.fetch.getGames()
-      .subscribe(data=> console.log(data));
   }
 
 }

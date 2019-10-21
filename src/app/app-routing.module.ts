@@ -6,7 +6,7 @@ import { CiaoComponent } from './ciao/ciao.component';
 import { WhyComponent } from './why/why.component';
 import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
-
+import { CrisisDetailResolverService } from './crisis-center/crisis-detail-resolver.service';
 const routes: Routes = [
   {
     path:'',
@@ -26,7 +26,9 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children:[
       {path:'', redirectTo: 'why', pathMatch: 'full'},
-      { path: 'why', component: WhyComponent}
+      { path: 'why', component: WhyComponent,
+        resolve: { games: CrisisDetailResolverService }
+      }
     ]
   },
   {

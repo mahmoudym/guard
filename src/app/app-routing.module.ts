@@ -25,6 +25,7 @@ const routes: Routes = [
     component: CiaoComponent,
     canActivate: [AuthGuard],
     children:[
+      {path:'', redirectTo: 'why', pathMatch: 'full'},
       { path: 'why', component: WhyComponent}
     ]
   },

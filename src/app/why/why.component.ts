@@ -11,7 +11,7 @@ export class WhyComponent implements OnInit {
   constructor(private fetch:FetchserviceService) { }
 
   ngOnInit() {
-    fetch.getGames()
+    this.fetch.getGames()
       .subscribe(data=> console.log(data));
   }
 

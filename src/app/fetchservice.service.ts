@@ -10,6 +10,6 @@ export class FetchserviceService {
   constructor(private http:HttpClient) { }
   getGames(): Observable<Game[]>{
     console.log("here")
-    return this.http.get<Game[]>('https://stagingapi.gbarena.com/api/games');
+    return this.http.get('https://stagingapi.gbarena.com/api/games');
   }
 }

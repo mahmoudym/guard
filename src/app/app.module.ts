@@ -9,7 +9,9 @@ import { WhyComponent } from './why/why.component';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
-import {FetchserviceService} from './fetchservice.service'
+import {FetchserviceService} from './fetchservice.service';
+import {HttpClientModule} from "@angular/common/http";
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,6 +24,7 @@ import {FetchserviceService} from './fetchservice.service'
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule
   ],
   providers: [AuthService,AuthGuard,FetchserviceService],
   bootstrap: [AppComponent]

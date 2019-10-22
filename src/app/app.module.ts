@@ -11,6 +11,8 @@ import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
 import {FetchserviceService} from './fetchservice.service';
 import {HttpClientModule} from "@angular/common/http";
+import { FilterPipe } from './filter.pipe';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import {HttpClientModule} from "@angular/common/http";
     ByeComponent,
     CiaoComponent,
     WhyComponent,
-    LoginComponent
+    LoginComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [AuthService,AuthGuard,FetchserviceService],
   bootstrap: [AppComponent]

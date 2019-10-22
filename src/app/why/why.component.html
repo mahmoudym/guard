@@ -1,4 +1,6 @@
 <p>why works!</p>
-<li *ngFor="let game of games">
-     {{ game.name}}
-   </li>
+
+<input [(ngModel)]="searchText" placeholder="search text goes here">
+  <li *ngFor="let game of games| filter : searchText">
+       {{ game.name}}
+  </li>

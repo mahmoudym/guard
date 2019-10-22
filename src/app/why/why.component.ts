@@ -8,6 +8,8 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class WhyComponent implements OnInit {
   public games:Game[] = [];
+  public searchText: any;
+
   constructor(private _route: ActivatedRoute, private _router:Router) {
     this.games = this._route.snapshot.data['games'].data
   }

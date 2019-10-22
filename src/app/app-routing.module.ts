@@ -34,7 +34,8 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
-  }
+  },
+  { path: 'salut', loadChildren: './salut/salut.module#SalutModule' }
 
 ];
 

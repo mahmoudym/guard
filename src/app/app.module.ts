@@ -22,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     CiaoComponent,
     WhyComponent,
     LoginComponent,
-    FilterPipe
+    FilterPipe,
+    
   ],
   imports: [
     BrowserModule,

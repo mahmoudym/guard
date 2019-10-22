@@ -1,0 +1,21 @@
+<form  #f="ngForm">
+  <div class="form-group">
+    <label for="firstName">First Name</label>
+    <input required minlength="3" maxlength="10" ngModel name= "firstName" #firstName= "ngModel"  id= "firstName" type="text" class = "form-control">
+    <div class="alert alert-danger" *ngIf = "firstName.touched && !firstName.valid" >
+      <div *ngIf= "firstName.errors.required"> First name is required </div>
+      <div *ngIf = "firstName.errors.minlength">First name should be minimum 3 characters.</div>
+      <div *ngIf = "firstName.errors.pattern">First name should be in pattern "banana".</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="email">email</label>
+    <input required minlength="3" maxlength="100" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" ngModel name= "email" #email= "ngModel"  id= "email" type="text" class = "form-control">
+    <div class="alert alert-danger" *ngIf = "email.touched && !email.valid" >
+      <div *ngIf= "email.errors.required"> email is required </div>
+      <div *ngIf = "email.errors.minlength">email should be minimum 3 characters.</div>
+      <div *ngIf = "email.errors.pattern">email should be in pattern "banana@banana.com".</div>
+    </div>
+  </div>
+  <button [disabled]="!f.form.valid" class="btn btn-primary" type="button" name="button">Submit</button>
+</form>

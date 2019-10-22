@@ -6,6 +6,7 @@ import { CiaoComponent } from './ciao/ciao.component';
 import { WhyComponent } from './why/why.component';
 import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 import { CrisisDetailResolverService } from './crisis-center/crisis-detail-resolver.service';
 const routes: Routes = [
   {
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: 'login',
     component: LoginComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   },
   { path: 'salut', loadChildren: './salut/salut.module#SalutModule' }
 

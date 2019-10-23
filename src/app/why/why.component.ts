@@ -16,5 +16,9 @@ export class WhyComponent implements OnInit {
 
   ngOnInit() {
   }
+  openGame(gameId:any){
+    console.log(gameId)
+    this._router.navigate(['/game',gameId])
+  }
 
 }

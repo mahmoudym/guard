@@ -10,10 +10,11 @@ import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
 import {FetchserviceService} from './fetchservice.service';
-import {HttpClientModule} from "@angular/common/http";
+import {HttpClientModule,HttpHeaders} from "@angular/common/http";
 import { FilterPipe } from './filter.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
+import { GameComponent } from './game/game.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { RegisterComponent } from './register/register.component';
     LoginComponent,
     FilterPipe,
     RegisterComponent,
+    GameComponent,
 
   ],
   imports: [

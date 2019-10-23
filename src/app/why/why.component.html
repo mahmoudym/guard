@@ -2,5 +2,5 @@
 
 <input [(ngModel)]="searchText" placeholder="search text goes here">
   <li *ngFor="let game of games| filter : searchText">
-       {{ game.name}}
+    <button type="button" (click)= "openGame(game.code)" name="button">{{ game.name}}</button>
   </li>

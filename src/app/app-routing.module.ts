@@ -7,6 +7,7 @@ import { WhyComponent } from './why/why.component';
 import { AuthGuard } from './auth.guard';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { GameComponent } from './game/game.component';
 import { CrisisDetailResolverService } from './crisis-center/crisis-detail-resolver.service';
 const routes: Routes = [
   {
@@ -21,6 +22,8 @@ const routes: Routes = [
     path: 'bye',
     component: ByeComponent
   },
+  { path: 'game/:id', component: GameComponent,
+    resolve: { games: CrisisDetailResolverService } },
   {
     path: 'ciao',
     component: CiaoComponent,

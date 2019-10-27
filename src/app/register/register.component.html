@@ -1,21 +1,21 @@
-<form  #f="ngForm">
+<form  [formGroup]= "registerForm">
   <div class="form-group">
     <label for="firstName">First Name</label>
-    <input required minlength="3" maxlength="10" ngModel name= "firstName" #firstName= "ngModel"  id= "firstName" type="text" class = "form-control">
-    <div class="alert alert-danger" *ngIf = "firstName.touched && !firstName.valid" >
-      <div *ngIf= "firstName.errors.required"> First name is required </div>
-      <div *ngIf = "firstName.errors.minlength">First name should be minimum 3 characters.</div>
-      <div *ngIf = "firstName.errors.pattern">First name should be in pattern "banana".</div>
+    <input name= "firstName" formControlName="firstName"  id= "firstName" type="text" class = "form-control">
+    <div class="alert alert-danger" *ngIf = "registerForm.get('firstName').touched && !registerForm.get('firstName').valid" >
+      <div *ngIf= "registerForm.get('firstName').errors.required"> First name is required </div>
+      <div *ngIf = "registerForm.get('firstName').errors.minlength">First name should be minimum 3 characters.</div>
+      <div *ngIf = "registerForm.get('firstName').errors.pattern">First name should be in pattern "banana".</div>
     </div>
   </div>
   <div class="form-group">
     <label for="email">email</label>
-    <input required minlength="3" maxlength="100" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" ngModel name= "email" #email= "ngModel"  id= "email" type="text" class = "form-control">
-    <div class="alert alert-danger" *ngIf = "email.touched && !email.valid" >
-      <div *ngIf= "email.errors.required"> email is required </div>
-      <div *ngIf = "email.errors.minlength">email should be minimum 3 characters.</div>
-      <div *ngIf = "email.errors.pattern">email should be in pattern "banana@banana.com".</div>
+    <input   name= "email" formControlName="email"  id= "email" type="text" class = "form-control">
+    <div class="alert alert-danger" *ngIf = "registerForm.get('email').touched && !registerForm.get('email').valid" >
+      <div *ngIf= "registerForm.get('email').errors.required"> email is required </div>
+      <div *ngIf = "registerForm.get('email').errors.minlength">email should be minimum 3 characters.</div>
+      <div *ngIf = "registerForm.get('email').errors.pattern">email should be in pattern "banana@banana.com".</div>
     </div>
   </div>
-  <button [disabled]="!f.form.valid" class="btn btn-primary" type="button" name="button">Submit</button>
+  <button [disabled]="!registerForm.valid" class="btn btn-primary" type="button" name="button">Submit</button>
 </form>

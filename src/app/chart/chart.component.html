@@ -1,0 +1,8 @@
+<ejs-chart id="chart-container" [primaryXAxis]="primaryXAxis" [primaryYAxis]="primaryYAxis" [legendSettings]= "legendSettings">
+  <e-series-collection>
+    <e-series [dataSource]="chartData" type="Line" xName="year" yName="gold" name="Gold" [marker]="columnMarker">
+    </e-series>
+    <e-series [dataSource]="chartData" type="Line" xName="year" yName="silver" name="Silver" [marker]="columnMarker">
+    </e-series>
+  </e-series-collection>
+</ejs-chart>

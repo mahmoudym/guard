@@ -15,6 +15,9 @@ import { FilterPipe } from './filter.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './register/register.component';
 import { GameComponent } from './game/game.component';
+import { ChartComponent } from './chart/chart.component';
+import { ChartModule } from '@syncfusion/ej2-angular-charts';
+import { CategoryService, ColumnSeriesService, LineSeriesService, LegendService, DataLabelService } from '@syncfusion/ej2-angular-charts';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +29,7 @@ import { GameComponent } from './game/game.component';
     FilterPipe,
     RegisterComponent,
     GameComponent,
+    ChartComponent,
 
   ],
   imports: [
@@ -33,9 +37,10 @@ import { GameComponent } from './game/game.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ChartModule,
   ],
-  providers: [AuthService,AuthGuard,FetchserviceService],
+  providers: [AuthService,AuthGuard,FetchserviceService, CategoryService, ColumnSeriesService, LineSeriesService,LegendService,DataLabelService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

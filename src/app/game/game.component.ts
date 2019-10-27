@@ -8,12 +8,25 @@ import {Game} from '../games'
   styleUrls: ['./game.component.css']
 })
 export class GameComponent implements OnInit {
+  public games:Game[];
+  public id:any;
   public game:Game;
-  constructor(private _route: ActivatedRoute) { }
+  constructor(private _route: ActivatedRoute, private _router:Router) {
+    this.id = this._route.snapshot.params['id'];
+    this.games = this._route.snapshot.data['games'].data
+    this.game = this.games.find(e=> e.code ===this.id)
+  }
 
   ngOnInit() {
-    const id = this._route.snapshot.params['id'];
-    this.game = this._route.snapshot.data['games'].data.find(e=> e.code ===id)
+    this._route.params.subscribe(params =>{
+      if(params['id']){
+        this.id = this._route.snapshot.params['id'];
+        this.game = this.games.find(e=> e.code ===this.id)
+      }
+    })
+  }
+  onClick(){
+    this._router.navigate(['/game','lol-tft'])
   }
 
 }

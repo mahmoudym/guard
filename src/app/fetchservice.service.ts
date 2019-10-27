@@ -9,7 +9,6 @@ export class FetchserviceService {
   public headers = new HttpHeaders();
   constructor(private http:HttpClient) { }
   getGames(): Observable<any>{
-    console.log("here")
     this.headers.append('Content-Type', 'application/json');
     this.headers.append('Access-Control-Allow-Origin','*');
     return this.http.get('https://api.staging.gbarena.com/api/games', {headers: this.headers});

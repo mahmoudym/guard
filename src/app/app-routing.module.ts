@@ -9,6 +9,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { GameComponent } from './game/game.component';
 import { CrisisDetailResolverService } from './crisis-center/crisis-detail-resolver.service';
+import { ChartComponent } from './chart/chart.component';
+
 const routes: Routes = [
   {
     path:'',
@@ -34,6 +36,10 @@ const routes: Routes = [
         resolve: { games: CrisisDetailResolverService }
       }
     ]
+  },
+  {
+    path: 'chart',
+    component: ChartComponent
   },
   {
     path: 'login',

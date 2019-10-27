@@ -15,10 +15,16 @@ export class WhyComponent implements OnInit {
   }
 
   ngOnInit() {
+    if(this._route.snapshot.queryParamMap.has('searchText')){
+      this.searchText = this._route.snapshot.queryParamMap.get('searchText')
+    }
+
   }
   openGame(gameId:any){
     console.log(gameId)
-    this._router.navigate(['/game',gameId])
+    this._router.navigate(['/game',gameId],{
+      queryParams:{'searchText': this.searchText}
+    })
   }
 
 }
